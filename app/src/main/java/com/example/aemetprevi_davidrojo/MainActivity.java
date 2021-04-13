@@ -3,6 +3,7 @@ package com.example.aemetprevi_davidrojo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,4 +15,20 @@ public class MainActivity extends AppCompatActivity {
 
         //cosas que hacer para inicializar sistemas, audio, fotos... etc.
     }
+
+    //Comportamiento para responder al evento CLICK del button "consultar"
+
+    /*public void onConsultar(View view){
+        if (view.getDrawingCacheBackgroundColor()==0){
+            view.setBackgroundColor(12345);
+
+        }else
+            view.setBackgroundColor(0);
+    }
+
+     */
+    
+
+    //Aquí pondre miControlador.onConsultar(String codigoLocalidad)
+
 }
