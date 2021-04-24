@@ -25,17 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         if (view.getDrawingCacheBackgroundColor()==0){
             view.setBackgroundColor(12345);
 
