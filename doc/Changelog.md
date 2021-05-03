@@ -8,3 +8,5 @@
         * Métodos:
             * Peticion.getPrevision()
             * Controlador.setRespuestaAPeticion()
+2. 2021-05-03.
+    * Corrección gitignore para poder hacer seguimiento de los .gradle para las dependencias.
