@@ -4,37 +4,47 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //ESTADO
+
+    //Enlace al controlador
     protected Controlador miControlador;
 
+
+    //COMPORTAMIENTO
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //cosas que hacer para inicializar sistemas, audio, fotos,...
 
         miControlador = Controlador.getInstance();
-        //cosas que hacer para inicializar sistemas, audio, fotos... etc.
     }
+
 
     //Comportamiento para responder al evento CLICK del button "consultar"
+    /** Called when the user touches the button */
+    public void onConsultar(View view) {
+        // Do something in response to button click
 
-    public void onConsultar(View view){
+
+        //Aquí primero buscaremos el código de localidad en la pantalla
+        //CUIDADO: si es vacío, no llamar al controlador, y mostrar en el
+        //resultado, 'Usted no ha introducido ningún valor en "localidad"'
 
 
+        //Aqui pondré: miControlador.onConsultar(String localidadCode);
+        TextView tvResultado = (TextView)findViewById(R.id.tvResultado);
+        tvResultado.setText("Accediendo a la web...");
 
-        if (view.getDrawingCacheBackgroundColor()==0){
-            view.setBackgroundColor(12345);
+        EditText etLocalidad = (EditText)findViewById(R.id.etLocalidad);
 
-        }else
-            view.setBackgroundColor(0);
+        miControlador.getPrevision(this,etLocalidad.getText().toString());
+
     }
-
-
-    
-
-    //Aquí pondre miControlador.onConsultar(String codigoLocalidad)
-
 }
