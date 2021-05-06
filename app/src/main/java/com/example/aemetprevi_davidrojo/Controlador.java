@@ -52,9 +52,9 @@ public class Controlador {
 
             ((TextView) miActivity.findViewById(R.id.tvResultado)).setText(miRespuesta.getInforme());
 
-//            WebView myWebView = (WebView) miActivity.findViewById(R.id.webview);
-//            myWebView.setVerticalScrollBarEnabled(true);
-//            myWebView.loadUrl(miRespuesta.getUrl());
+            WebView myWebView = (WebView) miActivity.findViewById(R.id.webview);
+            myWebView.setVerticalScrollBarEnabled(true);
+            myWebView.loadUrl(miRespuesta.getUrl());
         } else {
             ((TextView) miActivity.findViewById(R.id.tvResultado)).setText(miRespuesta.getInforme());
         }

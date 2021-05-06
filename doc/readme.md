@@ -17,3 +17,10 @@
    * Placeholder en el EditText de localidad para evitar el uso de etiquetas.
    * Permisos de internet
 
+<h3>2021-05-06</h3>
+    * Añadidio WebView
+    * Añadido scroll a tvResultado
+    * Ajustes de tamaños
+    * Eliminación de cabecera de la aplicación.
+    * Aplicación fijada a pantalla completa
+    * Cambiar textos hardcoded a Strings
