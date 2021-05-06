@@ -7,6 +7,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         //cosas que hacer para inicializar sistemas, audio, fotos,...
 
         miControlador = Controlador.getInstance();
+        Spinner spinner = (Spinner)findViewById(R.id.spinnerLocalidades);
+        spinner.add
     }
 
 

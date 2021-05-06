@@ -25,3 +25,8 @@
 * Eliminación de cabecera de la aplicación.
 * Aplicación fijada a pantalla completa
 * Cambiar textos hardcoded a Strings
+
+<h3>2021-04-07</h3>
+
+* Creada nueva rama para experimentar nuevas interfaces.
+    * Implementada una nueva interfaz sustituyendo el EditText por 2 spinners en los que colocar provincias y municipios
