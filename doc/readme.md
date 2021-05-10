@@ -25,3 +25,4 @@
 * Eliminación de cabecera de la aplicación.
 * Aplicación fijada a pantalla completa
 * Cambiar textos hardcoded a Strings
+* Crear nueva branch para investigar nuevas cosas
