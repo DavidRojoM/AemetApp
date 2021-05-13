@@ -16,13 +16,22 @@ public class Peticion {
 
     //protected String localidad;
     static protected int turno = 0;
+    private String ultimaRespuesta;
 
     //COMPORTAMIENTO
     public Peticion() {
 
     }
 
-    public void getPrevision(String URL) {
+    public String getUltimaRespuesta() {
+        return ultimaRespuesta;
+    }
+
+    public void setUltimaRespuesta(String ultimaRespuesta) {
+        this.ultimaRespuesta = ultimaRespuesta;
+    }
+
+    public void getPrevision(String URL, boolean publicar) {
         OkHttpClient cliente = new OkHttpClient();
         final int nuevoTurno = (Peticion.turno+1)%2;
         Peticion.turno = nuevoTurno;
@@ -42,35 +51,39 @@ public class Peticion {
                     throws IOException {
                 //TENEMOS RESPUESTAS!!!!!
                 String respuesta = respuestaServer.body().string();
-                // Create a handler that associated with Looper of the main thread
-                Handler manejador = new Handler(Looper.getMainLooper());
+                setUltimaRespuesta(respuesta);
+                if (publicar){
+                    // Create a handler that associated with Looper of the main thread
+                    Handler manejador = new Handler(Looper.getMainLooper());
 
-// Send a task to the MessageQueue of the main thread
-                manejador.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Code will be executed on the main thread
-                        Controlador miControlador = Controlador.getInstance();
-                        miControlador.setRespuestaAPeticion(respuesta,nuevoTurno);
-                    }
-                });
-
-
+                    // Send a task to the MessageQueue of the main thread
+                    manejador.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Code will be executed on the main thread
+                            Controlador miControlador = Controlador.getInstance();
+                            miControlador.setRespuestaAPeticion(respuesta,nuevoTurno);
+                        }
+                    });
+                }
             }
 
             public void onFailure(Call call, IOException e) {
                 String respuesta = e.getMessage();
-                Handler manejador = new Handler(Looper.getMainLooper());
+                setUltimaRespuesta(respuesta);
+                if (publicar){
+                    Handler manejador = new Handler(Looper.getMainLooper());
 
-// Send a task to the MessageQueue of the main thread
-                manejador.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Code will be executed on the main thread
-                        Controlador miControlador = Controlador.getInstance();
-                        miControlador.setRespuestaAPeticion(respuesta,-1);
-                    }
-                });
+                    // Send a task to the MessageQueue of the main thread
+                    manejador.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Code will be executed on the main thread
+                            Controlador miControlador = Controlador.getInstance();
+                            miControlador.setRespuestaAPeticion(respuesta,-1);
+                        }
+                    });
+                }
             }
         });
 

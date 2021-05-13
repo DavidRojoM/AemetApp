@@ -34,7 +34,7 @@ public class Controlador {
 
         this.miActivity = fromActivity;
 
-        miPeticion.getPrevision(url);
+        miPeticion.getPrevision(url,true);
     }
 
     public void setRespuestaAPeticion(String respuesta, int turno) {
@@ -47,7 +47,7 @@ public class Controlador {
             //Enlazamos con la Activity que hace la llamada, para devolverle los datos cuando
             //los tengamos
 
-            miPeticion.getPrevision(url);
+            miPeticion.getPrevision(url,true);
         } else if (turno == 0){
 
             ((TextView) miActivity.findViewById(R.id.tvResultado)).setText(miRespuesta.getInforme());

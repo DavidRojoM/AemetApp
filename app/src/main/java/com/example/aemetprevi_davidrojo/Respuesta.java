@@ -10,7 +10,7 @@ public class Respuesta {
     //COMPORTAMIENTO
     public Respuesta(String entrada, int turno) {
 
-        datos = entrada;
+        this.datos = entrada;
         this.turno = turno;
     }
 
