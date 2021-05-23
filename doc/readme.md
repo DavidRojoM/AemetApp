@@ -37,6 +37,7 @@
 * Añadir comentarios a la clase PeticionTest
 * Crear clase de prueba RespuestaTest
 * Actualizacion Interfaz_Main_Activity.png
+* Cambiar teclado alfabético a teclado númerico a la hora de introducir el código de localidad
 * APK RELEASE GENERADA
     * path : \AemetPrevi_DavidRojo\app\release\app-release.apk
 
