@@ -2,7 +2,6 @@ package com.example.aemetprevi_davidrojo;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,6 +10,9 @@ public class PeticionTest {
     Peticion miPeticion;
 
 
+    /**
+     * Se crea una nueva petición antes de cada método para asegurarnos de que probamos el código siempre en las mismas condiciones
+     * */
     @Before
     public void setUp() throws Exception {
         miPeticion = new Peticion();
@@ -20,6 +22,11 @@ public class PeticionTest {
     public void tearDown() throws Exception {
     }
 
+    /**
+     * Nos aseguramos de que la respuesta no es nula
+     *
+     * En este caso, el resultado que muestra no es correcto puesto que no disponemos de la estructura de Android para realizar la prueba
+     * */
     @Test
     public void getPrevision() throws InterruptedException {
         assertNull(miPeticion.getUltimaRespuesta());

@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Aqui pondré: miControlador.onConsultar(String localidadCode);
         TextView tvResultado = (TextView)findViewById(R.id.tvResultado);
-        tvResultado.setText("Accediendo a la web...");
+        tvResultado.setText(R.string.loading);
 
         EditText etLocalidad = (EditText)findViewById(R.id.etLocalidad);
 

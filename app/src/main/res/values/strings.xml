@@ -3,4 +3,6 @@
     <string name="placeholder">Código de la localidad</string>
     <string name="title">PREVISION METEOROLOGICA</string>
     <string name="submit">Consultar</string>
+    <string name="loading">Accediendo a la web...</string>
+    <string name="localidadError">DEBES INTRODUCIR UN CODIGO DE LOCALIDAD CORRECTO</string>
 </resources>

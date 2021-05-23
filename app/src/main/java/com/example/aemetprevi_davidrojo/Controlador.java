@@ -19,6 +19,10 @@ public class Controlador {
 
     }
 
+    public MainActivity getMiActivity() {
+        return miActivity;
+    }
+
     //Método de acceso
     public static Controlador getInstance() {
         if (miControlador == null)
